@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="">
-                    <img src="{{asset("storage/images/adminbanana.png")}}" width="30" height="30" alt=""> Better Eats
+                <a class="navbar-brand" href="/home">
+                    <img src="{{asset("storage/images/adminbanana.png")}}" width="30" height="30" alt=""></a><a href="/" style="outline: none;text-decoration: none;color:black"> Better Eats
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -13,11 +13,11 @@
                      
                      @else
                     <ul class="navbar-nav mr-auto">
-                          <li class="nav-item active">
-                            <a class="nav-link" aria-current="page" href="/feed">New Feed</a>
+                          <li class="nav-item ">
+                            <a class="nav-link" href="/feed">New Feed</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/feedlist">Feeds</a>
+                            <a class="nav-link"  href="/feedlist">Feeds</a>
                           </li>
                     </ul>
                     

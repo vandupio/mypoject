@@ -1,8 +1,6 @@
 @extends('layouts.userapp')
 @section('contnent')
-<?php
-//$decoded=htmlspecialchars_decode($foodx->article);
-?>
+
 <div class="row">
 
 	<div class="col-md-12" style="background:url({{asset("/storage/images/".$pic->Imagefilename)}})no-repeat center center fixed;background-size: cover;height: 400px;">

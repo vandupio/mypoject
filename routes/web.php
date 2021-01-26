@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('feedlist','FeedlistController');
 Route::resource('feed','FeedController');
 Route::resource('/','PagesController');
-Route::resource('menu_item','MenuController');
-Route::get('menu','PagesController@others');
+Route::get('test','PagesController@test');
+Route::resource('menu','MenuController');
 Route::get('about','PagesController@about');
 Auth::routes();
 

@@ -12,15 +12,10 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function about()
     {
         return view('pages.about');
-    }
-    public function others()
-    {
-
-        $menus=feed::all();
-        return view('pages.others',compact('menus'));
     }
     public function index()
     {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\feed;
 use App\images;
+use DB;
 class MenuController extends Controller
 {
     /**
@@ -15,6 +16,14 @@ class MenuController extends Controller
     public function index()
     {
         //
+        $menus=feed::join('images', 'images.feedid', '=', 'feeds.id')
+        ->select(array('feedid','title','Imagefilename','images.created_at'))
+        ->get();
+        /*echo "<pre>".print_r($menus,1)."<pre>";
+        foreach ($menus as $x) {
+            echo $x->created_at;
+        }*/
+        return view('pages.others',compact('menus'));
     }
 
     /**
