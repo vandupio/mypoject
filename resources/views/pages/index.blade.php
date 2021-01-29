@@ -41,7 +41,7 @@ $articlex = substr($lastpost->article, 0, strrpos($shorter, ' ')).'...';
                   echo $string;
                 ?>
               </p>
-              <p><a class="btn btn-lg btn-primary" href="menu_item/{{$list->id}}" role="button">Interested</a></p>
+              <p><a class="btn btn-lg btn-primary" href="menu/{{$list->id}}" role="button">Interested</a></p>
 	          </div>
 	        </div>
       </div>
@@ -63,7 +63,7 @@ $articlex = substr($lastpost->article, 0, strrpos($shorter, ' ')).'...';
   <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">My latest feed about <span class="text-muted">{{$lastpost->title}}</span></h2>
-        <p class="lead"><?php echo $articlex; ?></p><a href="/menu_item/{{$lastpost->id}}">read more</a>
+        <p class="lead"><?php echo $articlex; ?></p><a href="/menu/{{$lastpost->id}}">read more</a>
       </div>
       <div class="col-md-5">
         <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src ="{{asset("/storage/images/{$limages->Imagefilename}")}}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">

@@ -220,8 +220,10 @@ class FeedController extends Controller
     public function destroy($id)
     {
         //
-        $post = feed::find($id);
-        $post->delete();
+        $delfeed = feed::find($id);
+        $delpic =images::find($post->picid);
+        $delpic->delete();
+        $delfeed->delete();
         return redirect()->to('feedlist')->with('success', 'Post Removed');
     }
 }
