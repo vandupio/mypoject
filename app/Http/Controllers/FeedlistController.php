@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\feed;
 use App\images;
 class FeedlistController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +20,17 @@ class FeedlistController extends Controller
 
     public function index()
     {
-        $thisfeedslist=feed::all();
-        return view('pages.feedslist',compact('thisfeedslist'));
+ 
+        if (Auth::check())
+            {
+                $thisfeedslist=feed::all();
+                return view('pages.feedslist',compact('thisfeedslist'));
+            }
+        else
+        {
+            return redirect()->route('login');
+        }
+
     }
 
     /**

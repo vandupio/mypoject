@@ -4,20 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Auth;
 use DB;
 use App\feed;
 use App\images;
 class FeedController extends Controller
 {
-    public function list()
-    {
-        return view('pages.feedlist');
-    }
-    public function preview()
-    {
-        return view('pages.menuadmin');
-    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +18,15 @@ class FeedController extends Controller
      */
     public function index()
     {
-        $cats=DB::table('category')->get();
-       
-        return view('pages.feed',compact('cats'));
+        if (Auth::check())
+            {
+                $cats=DB::table('category')->get();
+                return view('pages.feed',compact('cats'));
+            }
+        else
+            {
+               return redirect()->route('login');
+            }
     }
 
     /**
@@ -221,9 +220,9 @@ class FeedController extends Controller
     {
         //
         $delfeed = feed::find($id);
-        $delpic =images::find($post->picid);
+        $delpic =images::find($delfeed->picid);
         $delpic->delete();
         $delfeed->delete();
-        return redirect()->to('feedlist')->with('success', 'Post Removed');
+        return redirect()->to('feedlist');
     }
 }
